@@ -69,7 +69,8 @@ s)t0:(f0[{-6!x}] | n | ("(" qs ")")[1]) ?[(?[`as] n)1]
 s)j0:(t0 *[(((?[`left|`inner|`cross] `join)[0]|","{`cross}) t0 ?[`on ex][1])])|("(" j0 ")")[1]
 s)qs:(`select ?[`distinct] ns ?[`into n][1] ?[`from j0][1] ?[`where ex][1] (?[`group `by es][2]?[`having ex][1])[{x}]?[(`order `by ex ?[`asc|`desc])[2 3]] ?[`limit ex][1])[{qf . 1_x}] | (f0{-6!x})
 s)qc:(`create `table n "("(dc[,:] *[("," dc)1])[{(,/)x}]")")[{b:(+:)x 4;c:$[(&/)b[1] in (!:)ct;ct[b 1];'`typename];.[x 2;();:;(+:)b[0]!c$\:()]}]; dc:n ty
-s)qi:(`insert `into n ?[ep] (`values eps)[{(+:)(-6)!enlist,enlist,'x[1]}]|qs[{(.:)(+:)x}]){f:x 3;x[2]insert ($[(#:)f;(+:)f!;])((@:)'[(.:)$[(#:)f;f#;](+:)0!(.:)x 2])$x 4}
+nc:{x$$[@y;y;@[y;&^y;:;*x$()]]}
+s)qi:(`insert `into n ?[ep] (`values eps)[{(+:)(-6)!enlist,enlist,'x[1]}]|qs[{(.:)(+:)x}]){f:x 3;x[2]insert ($[(#:)f;(+:)f!;])((@:)'[(.:)$[(#:)f;f#;](+:)0!(.:)x 2])nc'x 4}
 s)qu:(`update n `set es `where ex){![x 1;wh x 5;0b;x[3;;1]!x[3;;2]]};qx:(`delete `from n `where ex){![x 2;wh x 4;0b;0#`]};qd:(`drop `table n)[{.[`.;();_;x 2]}]
 s)qq:qs|qc|qi|qu|qx|qd
 K:();K:?`$',/{(),/:x@&10=abs@@:'x:-1_x}'.:'.:'PS
