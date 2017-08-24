@@ -65,8 +65,8 @@ cv:{$[@x;x;&/0>t:@:'x;(-:&/t)$x;@[x;&~10=t;$:]]};cc:{cv $[@y;x@y?1b;$[&/at'x:@[x
 c1:{$[#x;({cc[y;x xeq/:z]};x);cc],(enlist,y[;1],,z;enlist,y[;0])}; f.coalesce:('[{$[2>#x;'coalesce;cc[x;~xnl'-1_x]]};enlist])
 s)ce:(`case ?[ex] +[(`when ex `then ex)[1 3]] `else ex `end)[{c1 . x 1 2 4}]
 s)de:((`extract"("n `from ex")")[2 4]|(`cast"("ex `as ty")")[4 2])[{(cvt;,*x;x 1)}]; ty:(n ?["(" ?[es] ")"])[0]
-s)ex:(e4 ?[`or[{xv x}]ex])[{xb x}];               es:"*"|(ex[,:] *[("," ex)1]){(,/)x};  ep: ("("es")")[1]
-s)en:(ex ?[(?[`as] n)1]);                         ns:"*"|(en[,:] *[("," en)1]){(,/)x};  eps:(ep[,:] *[(","ep)1]){(,/)x}
+s)ex:(e4 ?[`or[{xv x}]ex])[{xb x}];               es:"*"|(ex[,:] *[("," ex)1]){,/x};  ep: ("("es")")[1]
+s)en:(ex ?[(?[`as] n)1]);                         ns:"*"|(en[,:] *[("," en)1]){,/x};  eps:(ep[,:] *[(","ep)1]){,/x}
 s)t0:(f0[{-6!x}] | n | ("(" qs ")")[1]) ?[(?[`as] n)1]
 s)j0:(t0 *[(((?[`left|`inner|`cross] `join)[0]|","{`cross}) t0 ?[`on ex][1])])|("(" j0 ")")[1]
 s)qs:(`select ?[`distinct] ns ?[`into n][1] ?[`from j0][1] ?[`where ex][1] (?[`group `by es][2]?[`having ex][1])[{x}]?[(`order `by ex ?[`asc|`desc])[2 3]] ?[`limit ex][1])[{qf . 1_x}] | (f0{-6!x})
