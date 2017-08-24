@@ -41,7 +41,7 @@ f.floor:_:;f.ceil:f.ceiling:-_-:;f.sign:.q.signum;f.round:{("j"$x*f)%f:10 xexp y
 f.pi:{4*atan 1};f.atan2:{1 4.$atan(x%y;(y<0)*sign x)};f.cot:%tan@;f.log10:{log[x]%log 10};f.mod:.q.mod;f.truncate:{$[~y;tr x;tr[x*f]%f:10 xexp y]}
 f.degrees:{x*57.295779513082};f.radians:{x*0.017453292519943}
 
-tf:{'[{y:{$[abs[@x]in 10 11h;$x;x]}'y;$[10h=@x:$[^n:0N|/#:'y@&u:~10h=t'y;x . y;(x').@[y;&~u;n#,:]];`$x;x]}[x];enlist]};tf0:{$[11h=t z;y;x[y]z]}[tf] 
+tf:{'[{y:{$[abs[@x]in 10 11h;$x;x]}'y;$[10h=@x:$[^n:0N|/#:'y@&u:~10h=t'y;x . y;(x').@[y;&~u;n#,:]];`$x;x]}[x];enlist]};tf0:{$[11h=t z;y;x[y]z]}[tf]
 f.trim:tf0 .q.trim;f.ltrim:tf0 .q.ltrim;f.rtrim:tf0 .q.rtrim;f.lcase:tf .q.lower;f.ucase:tf .q.upper;f.left:tf{$[^y;"";.q.sublist[y;x]]};f.right:{left[x;-y]}
 f.substring:tf{$[(^y)|^z;"";.q.sublist[(y-1;z);x]]};f.locate:tf('[{{$[^z;z;~#x;0;0^*1+((z-1)_y) ss x]}.(2#x),$[2<#x;x 2;1]};enlist])
 f.repeat:tf{,/y#,x};f.replace:tf .q.ssr;f[`$("char_length";"character_length";"length")]:tf{#x};f[`$"insert"]:tf{[s;i;n;t](i#s),t,(n+i)_s}
